@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nytimesviewer.NewsViewerController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="News">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleReview" text="Review Article" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open Reviews" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Save Reviews" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <TextField fx:id="searchTextField" prefHeight="26.0" prefWidth="414.0" />
+            <Button mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+            <Button mnemonicParsing="false" onAction="#handleSwitchable" text="See Reviews" />
+         </children>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
+      </HBox>
+      <ListView fx:id="newsListView" prefHeight="138.0" prefWidth="800.0" />
+      <WebView fx:id="webView" prefHeight="269.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
