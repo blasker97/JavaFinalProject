@@ -7,7 +7,7 @@ package nytimesviewer;
 
 /**
  *
- * @author Professor Wergeles
+ * @author Brian L
  */
 public class NYTNewsStory {
     public String webUrl;

@@ -19,7 +19,7 @@ import org.json.simple.JSONValue;
 
 /**
  *
- * @author Professor Wergeles
+ * @author Brian L
  * 
  * @references
  *      1) https://docs.oracle.com/javase/tutorial/networking/urls/creatingUrls.html
@@ -58,12 +58,6 @@ public class NYTNewsManager {
     private String urlString = "";
     private String webString = "";
     
-    // sample url:
-    //private String urlString = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=Microsoft&api-key=6bb2c6f09bb14a3183db503c5d8030ec";
-   
-    // NOTE!!  The api key below is Professor Wergeles' api key.  If you build an app that uses the New York Times API
-    // get your own api key!!!!!  Get it from: http://developer.nytimes.com
-    // I also cannot guarantee that the api key provided will be valid in the future.
     private final String baseUrlString = "http://api.nytimes.com/svc/search/v2/articlesearch.json";
     private final String apiKey = "1ddc9680fcac491898567e73e20dbf32";
     private String searchString = "University of Missouri";

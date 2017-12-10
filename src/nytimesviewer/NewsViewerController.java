@@ -55,7 +55,7 @@ import javafx.util.Pair;
 /**
  * FXML Controller class
  *
- * @author Professor Wergeles
+ * @author Brian L.
  * 
  * @references
  *      1) http://stackoverflow.com/questions/26227786/loading-urls-in-javafx-webview-is-crashing-the-jvm
@@ -86,7 +86,7 @@ public class NewsViewerController extends Switchable implements Initializable, T
     private String headline;
     
     
-    private boolean tableCreated = false;
+    public boolean tableCreated = false;
     
     
     
@@ -371,7 +371,7 @@ public class NewsViewerController extends Switchable implements Initializable, T
     }
 
     @Override
-    public String handleTime() {
+     public String handleTime() {
         String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         return timeStamp;
     }
@@ -448,4 +448,4 @@ public class NewsViewerController extends Switchable implements Initializable, T
             }
             
         }
-    }
+}

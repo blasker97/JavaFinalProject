@@ -83,25 +83,44 @@ public class ReviewPageController extends Switchable implements Initializable {
     
     @FXML
     private void readDescription(ActionEvent event){
-       
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getTitle() + " review");
-        alert.setHeaderText("Viewed at " + reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getTimeStamp());
-        alert.setContentText("Url: " + reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getUrl());
+        NewsViewerController controller = (NewsViewerController)getControllerByName("NewsViewer");
         
-        TextArea textArea = new TextArea(reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getDesc());
-        textArea.setEditable(false);
-        textArea.setWrapText(true);
-        textArea.setMaxWidth(Double.MAX_VALUE);
-        textArea.setMaxHeight(Double.MAX_VALUE);
-            
-        GridPane expContent = new GridPane();
-        expContent.setMaxWidth(Double.MAX_VALUE);
-        expContent.add(textArea, 0, 0);
+        if(controller.tableCreated == true){
+            if(reviews.isEmpty() == false){
 
-        alert.getDialogPane().setExpandableContent(expContent);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle(reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getTitle() + " review");
+                alert.setHeaderText("Viewed at " + reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getTimeStamp());
+                alert.setContentText("Url: " + reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getUrl());
+
+                TextArea textArea = new TextArea(reviews.get(reviewTable.getSelectionModel().getFocusedIndex()).getDesc());
+                textArea.setEditable(false);
+                textArea.setWrapText(true);
+                textArea.setMaxWidth(Double.MAX_VALUE);
+                textArea.setMaxHeight(Double.MAX_VALUE);
+
+                GridPane expContent = new GridPane();
+                expContent.setMaxWidth(Double.MAX_VALUE);
+                expContent.add(textArea, 0, 0);
+
+                alert.getDialogPane().setExpandableContent(expContent);
+
+                alert.showAndWait();
+            }
+        }
         
-        alert.showAndWait();
+    }
+    
+    @FXML
+    private void deleteEntry(ActionEvent event){
+        NewsViewerController controller = (NewsViewerController)getControllerByName("NewsViewer");
+        if(controller.tableCreated == true){
+            if(reviews.isEmpty() == false){
+                reviews.remove(reviewTable.getSelectionModel().getFocusedIndex());
+            }
+        }
+        
+        
         
     }
 }

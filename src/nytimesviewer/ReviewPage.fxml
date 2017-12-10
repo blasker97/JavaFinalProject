@@ -15,6 +15,7 @@
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleSwitchable" text="Return To Articles" textAlignment="CENTER" />
             <Button mnemonicParsing="false" onAction="#readDescription" text="Read Description" />
+            <Button mnemonicParsing="false" onAction="#deleteEntry" text="Delete Entry" />
          </children>
       </HBox>
    </children>

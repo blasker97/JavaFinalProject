@@ -16,7 +16,7 @@ import static nytimesviewer.Switchable.getControllerByName;
 
 /**
  *
- * @author Professor Wergeles
+ * @author Brian L
  */
 public class NYTimesViewer extends Application {
 
